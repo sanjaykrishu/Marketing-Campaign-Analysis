@@ -1,0 +1,23 @@
+
+-- Marketing Campaign Analysis DAX Measures
+
+Total Impressions = SUM(Interactions[Impression])
+Total Clicks = SUM(Interactions[Click])
+CTR = DIVIDE([Total Clicks], [Total Impressions], 0)
+Total Conversions = SUM(Interactions[Conversion])
+Conversion Rate = DIVIDE([Total Conversions], [Total Clicks], 0)
+Total Revenue = SUM(Interactions[Revenue])
+Total Cost = SUM(Campaigns[CampaignCost])
+ROI = [Total Revenue] - [Total Cost]
+Cost Per Click = DIVIDE([Total Cost], [Total Clicks], 0)
+Cost Per Acquisition = DIVIDE([Total Cost], [Total Conversions], 0)
+
+-- Funnel
+Funnel Impressions = [Total Impressions]
+Funnel Clicks = [Total Clicks]
+Funnel Conversions = [Total Conversions]
+
+-- Campaign KPIs
+Revenue per Campaign = SUM(Interactions[Revenue])
+Conversions per Campaign = SUM(Interactions[Conversion])
+CTR per Campaign = DIVIDE([Total Clicks], [Total Impressions], 0)
